@@ -1,3 +1,5 @@
+var d3   = require('d3');
+
 (function() {
 
 // Node-link tree diagram using the Reingold-Tilford "tidy" algorithm,
@@ -404,4 +406,10 @@ function d3_layout_hierarchyLinks(nodes) {
   }));
 }
 
+  if (typeof define === "function" && define.amd) {
+    define(d3.layout.flextree); 
+  }
+  else if (typeof module === "object" && module.exports) {
+    module.exports = d3;
+  }
 })();
